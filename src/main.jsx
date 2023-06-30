@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-  { basename: "/contacts" },
+  { basename: baseName },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
