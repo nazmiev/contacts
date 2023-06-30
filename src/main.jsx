@@ -15,9 +15,11 @@ import Contact, {
   action as contactAction,
 } from "./routes/contact";
 
+const baseName = import.meta.env.BASE_URL;
+
 const router = createBrowserRouter([
   {
-    path: "/contacts/",
+    path: baseName,
     element: <Root />,
     errorElement: <ErrorPage />,
     loader: rootLoader,
