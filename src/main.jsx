@@ -19,7 +19,7 @@ const baseName = import.meta.env.BASE_URL;
 
 const router = createBrowserRouter([
   {
-    path: baseName,
+    path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
     loader: rootLoader,
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
             action: editAction,
           },
           {
-            path: `${baseName}contacts/:contactId/destroy`,
+            path: `contacts/:contactId/destroy`,
             action: destroyAction,
             errorElement: <div>Oops! There was an error.</div>,
           },
@@ -50,6 +50,7 @@ const router = createBrowserRouter([
       },
     ],
   },
+  { basename: "/contacts" },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -1,12 +1,11 @@
 import { Form, useLoaderData, redirect, useNavigate } from "react-router-dom";
 import { updateContact } from "../contacts";
-const baseName = import.meta.env.BASE_URL;
 
 export async function action({ request, params }) {
   const formData = await request.formData();
   const updates = Object.fromEntries(formData);
   await updateContact(params.contactId, updates);
-  return redirect(`${baseName}/contacts/${params.contactId}`);
+  return redirect(`/contacts/${params.contactId}`);
 }
 
 export default function EditContact() {
