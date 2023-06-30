@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import { getContacts, createContact } from "../contacts";
 import { useEffect } from "react";
+const baseName = import.meta.env.BASE_URL;
 
 export async function loader({ request }) {
   const url = new URL(request.url);
@@ -19,7 +20,7 @@ export async function loader({ request }) {
 
 export async function action() {
   const contact = await createContact();
-  return redirect(`/contacts/${contact.id}/edit`);
+  return redirect(`${baseName}contacts/${contact.id}/edit`);
 }
 
 export default function Root() {
